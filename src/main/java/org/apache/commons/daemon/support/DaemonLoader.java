@@ -52,7 +52,8 @@ public final class DaemonLoader
             log.log(Level.INFO, "java version \"{0}\"", System.getProperty("java.version"));
             log.log(Level.INFO, "commons daemon version \"{0}\"", System.getProperty("commons.daemon.version"));
         }
-        
+
+
         log.log(Level.INFO, "{0} (build {1})", new Object[]{
             System.getProperty("java.runtime.name"),
             System.getProperty("java.runtime.version")
