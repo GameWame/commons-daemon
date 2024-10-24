@@ -24,6 +24,8 @@ import org.apache.commons.daemon.DaemonInitException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Objects;
+import java.util.logging.Logger;
+import java.util.logging.Level;
 
 /**
  * Used by jsvc for Daemon management.
@@ -41,23 +43,31 @@ public final class DaemonLoader
     private static Method destroy; //@GuardedBy("this")
     private static Method signal; //@GuardedBy("this")
 
+
+    private static final Logger log = Logger.getLogger(DaemonLoader.class.getName());
+
     public static void version()
     {
-        System.err.println("java version \"" +
-                           System.getProperty("java.version") + "\"");
-        System.err.println(System.getProperty("java.runtime.name") +
-                           " (build " +
-                           System.getProperty("java.runtime.version") + ")");
-        System.err.println(System.getProperty("java.vm.name") +
-                           " (build " +
-                           System.getProperty("java.vm.version") +
-                           ", " + System.getProperty("java.vm.info") + ")");
-        System.err.println("commons daemon version \"" +
-                System.getProperty("commons.daemon.version") + "\"");
-        System.err.println("commons daemon process (id: " +
-                           System.getProperty("commons.daemon.process.id") +
-                           ", parent: " +
-                           System.getProperty("commons.daemon.process.parent") + ")");
+        if (log.isLoggable(Level.INFO)) {
+            log.log(Level.INFO, "java version \"{0}\"", System.getProperty("java.version"));
+            log.log(Level.INFO, "commons daemon version \"{0}\"", System.getProperty("commons.daemon.version"));
+        }
+        
+        log.log(Level.INFO, "{0} (build {1})", new Object[]{
+            System.getProperty("java.runtime.name"),
+            System.getProperty("java.runtime.version")
+        });
+
+        log.log(Level.INFO, "{0} (build {1}, {2})", new Object[]{
+            System.getProperty("java.vm.name"),
+            System.getProperty("java.vm.version"),
+            System.getProperty("java.vm.info")
+        });
+
+        log.log(Level.INFO, "commons daemon process (id: {0}, parent: {1})", new Object[]{
+            System.getProperty("commons.daemon.process.id"),
+            System.getProperty("commons.daemon.process.parent")
+        });
     }
 
     /**
@@ -74,7 +84,7 @@ public final class DaemonLoader
             /* Gets the ClassLoader loading this class */
             final ClassLoader cl = DaemonLoader.class.getClassLoader();
             if (cl == null) {
-                System.err.println("Cannot retrieve ClassLoader instance");
+                log.info("Cannot retrieve ClassLoader instance");
                 return false;
             }
 
