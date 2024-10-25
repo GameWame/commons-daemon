@@ -21,7 +21,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.IOException;
 
+
+
+import org.apache.commons.daemon.support.DaemonLoader;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class DaemonInitExceptionTest {
 
@@ -32,3 +36,19 @@ public class DaemonInitExceptionTest {
     }
 
 }
+class DaemonLoaderTest {
+    @Test
+    void testLoadWithMissingMethods() {
+        boolean result = DaemonLoader.load("com.example.MissingMethodsClass", new String[0]);
+        assertFalse(result);
+    }
+
+    @Test
+    void testLoadWithExceptionInInit() {
+        boolean result = DaemonLoader.load("com.example.ExceptionInInitClass", new String[0]);
+        assertFalse(result);
+    }
+}
+
+
+
