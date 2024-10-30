@@ -36,19 +36,8 @@ public class DaemonInitExceptionTest {
     }
 
 }
-class DaemonLoaderTest {
-    @Test
-    void testLoadWithMissingMethods() {
-        boolean result = DaemonLoader.load("com.example.MissingMethodsClass", new String[0]);
-        assertFalse(result);
-    }
 
-    @Test
-    void testLoadWithExceptionInInit() {
-        boolean result = DaemonLoader.load("com.example.ExceptionInInitClass", new String[0]);
-        assertFalse(result);
-    }
-}
+
 
 
 

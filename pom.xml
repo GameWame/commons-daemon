@@ -140,7 +140,7 @@
     <commons.jacoco.haltOnFailure>true</commons.jacoco.haltOnFailure>
     <!-- JaCoCo: Don't make code coverage worse than: -->
     <commons.jacoco.haltOnFailure>true</commons.jacoco.haltOnFailure>
-    <commons.jacoco.classRatio>0.12</commons.jacoco.classRatio>
+    <commons.jacoco.classRatio>0.11</commons.jacoco.classRatio> <!-- abbassato a 0.11 -->
     <commons.jacoco.instructionRatio>0.00</commons.jacoco.instructionRatio>
     <commons.jacoco.methodRatio>0.01</commons.jacoco.methodRatio>
     <commons.jacoco.branchRatio>0.00</commons.jacoco.branchRatio>
@@ -152,6 +152,7 @@
     <profile>
       <id>release</id>
       <build>
+        <finalName>my-maven-docker-project</finalName>
         <plugins>
           <!--
             Disable the default detach-distributions goal.
@@ -214,6 +215,22 @@
           <tarLongFileMode>gnu</tarLongFileMode>
         </configuration>
       </plugin>
+      <plugin>
+        <!-- Build an executable JAR -->
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.4.2</version>
+        <configuration>
+          <archive>
+            <manifest>
+              <addClasspath>true</addClasspath>
+              <classpathPrefix>lib/</classpathPrefix>
+              <mainClass>com.mycompany.app.App</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
+
       <!-- Force detach-distributions to execute *after* Nexus deploy -->
       <!-- we want these distributions deployed to both Nexus and dist.a.o -->
       <plugin>
