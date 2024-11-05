@@ -25,6 +25,12 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.net.InetSocketAddress;
 
+import java.io.FileOutputStream;
+import java.io.PrintStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+
 public class example
 {
     public static void main( String[] args ) throws IOException {
@@ -45,5 +51,15 @@ public class example
             os.write(response.getBytes());
             os.close();
         }
+    }
+
+    public void createFile(String name) throws IOException {
+        OutputStream file = new FileOutputStream(name, true);
+        PrintStream out = new PrintStream(file);
+        SimpleDateFormat fmt = new SimpleDateFormat();
+
+        out.println(fmt.format(new Date()));
+        out.close();
+        file.close();
     }
 }

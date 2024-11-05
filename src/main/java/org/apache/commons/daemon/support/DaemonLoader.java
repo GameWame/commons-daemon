@@ -223,25 +223,32 @@ public final class DaemonLoader
             }
 
         }
+
         catch (final InvocationTargetException e) {
-            final Throwable thrown = e.getTargetException();
-            // DaemonInitExceptions can fail with a nicer message
-            if (thrown instanceof DaemonInitException) {
-                failed(((DaemonInitException) thrown).getMessageWithCause());
-            }
-            else {
-                thrown.printStackTrace(System.err);
-            }
-            return false;
-        }
-        catch (final Throwable t) {
-            // In case we encounter ANY error, we dump the stack trace and
-            // return false (load, start and stop won't be called).
-            t.printStackTrace(System.err);
-            return false;
+            return handleInvocationTargetException(e);
+        } catch (final Throwable t) {
+            return handleGeneralException(t);
         }
         // The class was loaded and instantiated correctly, we can return
         return true;
+    }
+
+    private static boolean handleInvocationTargetException(InvocationTargetException e) {
+        final Throwable thrown = e.getTargetException();
+        if (thrown instanceof DaemonInitException) {
+            // DaemonInitExceptions can fail with a nicer message
+            failed(((DaemonInitException) thrown).getMessageWithCause());
+        } else {
+            thrown.printStackTrace(System.err);
+        }
+        return false;
+    }
+
+    private static boolean handleGeneralException(Throwable t) {
+        // In case we encounter ANY error, we dump the stack trace and
+        // return false (load, start and stop won't be called).
+        t.printStackTrace(System.err);
+        return false;
     }
 
     public static boolean start()
