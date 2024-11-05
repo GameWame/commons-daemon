@@ -15,7 +15,7 @@
  *  limitations under the License.
  */
 
-package org.apache.commons.daemon.Docker;
+package org.apache.commons.daemon.docker;
 
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;

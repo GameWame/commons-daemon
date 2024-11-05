@@ -225,7 +225,7 @@
             <manifest>
               <addClasspath>true</addClasspath>
               <classpathPrefix>lib/</classpathPrefix>
-              <mainClass>org.apache.commons.daemon.Docker.example</mainClass>
+              <mainClass>org.apache.commons.daemon.docker.example</mainClass>
             </manifest>
           </archive>
         </configuration>
