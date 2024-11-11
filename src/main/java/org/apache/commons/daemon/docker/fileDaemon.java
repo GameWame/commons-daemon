@@ -16,8 +16,6 @@
  */
 package org.apache.commons.daemon.docker;
 
-import org.apache.commons.daemon.support.DaemonLoader;
-
 import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
