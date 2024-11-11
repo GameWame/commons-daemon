@@ -1,2 +1,5 @@
+  http://www.apache.org/licenses/LICENSE-2.0
+
+
 
 2024-11-11 10:15:41 - File output.txt modificato alle Mon Nov 11 10:15:39 CET 2024
