@@ -46,7 +46,7 @@ public class fileDaemon {
                     checkForNewEntries();
                 } catch (InterruptedException | IOException e) {
                     logger.log(Level.SEVERE, "An error occurred", e);
-                    
+
                     if (e instanceof InterruptedException) {
                         Thread.currentThread().interrupt();
                     }
