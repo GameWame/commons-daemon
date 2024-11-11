@@ -16,11 +16,17 @@
  */
 package org.apache.commons.daemon.docker;
 
+import org.apache.commons.daemon.support.DaemonLoader;
+
 import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.logging.Logger;
+import java.util.logging.Level;
 
 public class fileDaemon {
+
+    private static final Logger logger = Logger.getLogger(example.class.getName());
     static class FileMonitorDaemon implements Runnable {
         private final String monitoredFile;
         private final String logFile;
@@ -39,7 +45,11 @@ public class fileDaemon {
                     Thread.sleep(5000); // Intervallo di 5 secondi per il monitoraggio
                     checkForNewEntries();
                 } catch (InterruptedException | IOException e) {
-                    e.printStackTrace();
+                    logger.log(Level.SEVERE, "An error occurred", e);
+                    
+                    if (e instanceof InterruptedException) {
+                        Thread.currentThread().interrupt();
+                    }
                 }
             }
         }
