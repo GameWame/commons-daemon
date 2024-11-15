@@ -58,7 +58,7 @@ public class example {
                             "</head>\n" +
                             "<body>\n" +
                             "   <div class='container'>\n" +
-                            "       <h1>Hello World!</h1>\n" +
+                            "       <h1>Hello User!</h1>\n" +
                             "       <p>This Maven project is Dockerized and ready to create files.</p>\n" +
                             "       <form action=\"/create-file\" method=\"post\">\n" +
                             "           <button type=\"submit\">Create output.txt</button>\n" +
@@ -70,6 +70,7 @@ public class example {
             OutputStream os = t.getResponseBody();
             os.write(response.getBytes());
             os.close();
+
         }
     }
 

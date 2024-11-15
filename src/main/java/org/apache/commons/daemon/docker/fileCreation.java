@@ -32,7 +32,7 @@ public class fileCreation {
         public void handle(HttpExchange t) throws IOException {
             if ("POST".equalsIgnoreCase(t.getRequestMethod())) {
                 String entry = createFile("output.txt");
-                logEntry("log.txt", entry);
+                /* logEntry("log.txt", entry); */
                 String response =
                         "<html>\n" +
                                 "<head>\n" +
@@ -69,13 +69,14 @@ public class fileCreation {
             return entry;
         }
 
-        public void logEntry(String logFileName, String entry) throws IOException {
+
+        /*public void logEntry(String logFileName, String entry) throws IOException {
             try (OutputStream logFile = new FileOutputStream(logFileName, true);
                  PrintStream logOut = new PrintStream(logFile)) {
                 SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                 String logEntry = fmt.format(new Date()) + " - Avviso Modifica (no Daemon): " + entry;
                 logOut.println(logEntry);
             }
-        }
+        }*/
     }
 }
