@@ -17,13 +17,10 @@
 
 package org.apache.commons.daemon;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 import java.io.IOException;
 
-
-
-import org.apache.commons.daemon.support.DaemonLoader;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
