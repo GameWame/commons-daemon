@@ -746,7 +746,7 @@ public class DaemonLoader2Test {
         // The following exception was thrown during execution in test generation
         try {
             java.lang.Class<?> wildcardClass74 = daemonController73.getClass();
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+            fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
         }

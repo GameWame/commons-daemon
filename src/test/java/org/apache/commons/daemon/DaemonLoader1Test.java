@@ -158,7 +158,7 @@ public class DaemonLoader1Test {
         // The following exception was thrown during execution in test generation
         try {
             java.lang.Class<?> wildcardClass2 = strArray1.getClass();
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+            fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
         }
@@ -259,7 +259,7 @@ public class DaemonLoader1Test {
         // The following exception was thrown during execution in test generation
         try {
             java.lang.Class<?> wildcardClass25 = daemonController24.getClass();
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+            fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
         }
@@ -493,7 +493,7 @@ public class DaemonLoader1Test {
         // The following exception was thrown during execution in test generation
         try {
             java.lang.Class<?> wildcardClass12 = daemonController11.getClass();
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+            fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
         }
@@ -1685,7 +1685,7 @@ public class DaemonLoader1Test {
         // The following exception was thrown during execution in test generation
         try {
             java.lang.Class<?> wildcardClass34 = daemonController33.getClass();
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+            fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
         }
@@ -1813,7 +1813,7 @@ public class DaemonLoader1Test {
         // The following exception was thrown during execution in test generation
         try {
             java.lang.Class<?> wildcardClass11 = strArray10.getClass();
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+            fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
         }
@@ -1870,7 +1870,7 @@ public class DaemonLoader1Test {
         // The following exception was thrown during execution in test generation
         try {
             java.lang.Class<?> wildcardClass63 = daemonController62.getClass();
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+            fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
         }
@@ -4231,7 +4231,7 @@ public class DaemonLoader1Test {
         // The following exception was thrown during execution in test generation
         try {
             java.lang.Class<?> wildcardClass26 = daemonController25.getClass();
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+            fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
         }
@@ -5568,7 +5568,7 @@ public class DaemonLoader1Test {
         // The following exception was thrown during execution in test generation
         try {
             java.lang.Class<?> wildcardClass15 = daemonController14.getClass();
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+            fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
         }
@@ -5759,7 +5759,7 @@ public class DaemonLoader1Test {
         // The following exception was thrown during execution in test generation
         try {
             java.lang.Class<?> wildcardClass6 = strArray5.getClass();
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+            fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
         }
@@ -7162,7 +7162,7 @@ public class DaemonLoader1Test {
         // The following exception was thrown during execution in test generation
         try {
             java.lang.Class<?> wildcardClass27 = daemonController26.getClass();
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+            fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
         }
@@ -7656,7 +7656,7 @@ public class DaemonLoader1Test {
         // The following exception was thrown during execution in test generation
         try {
             java.lang.Class<?> wildcardClass32 = daemonController31.getClass();
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+            fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
         }
@@ -12255,7 +12255,7 @@ public class DaemonLoader1Test {
         // The following exception was thrown during execution in test generation
         try {
             java.lang.Class<?> wildcardClass39 = daemonController38.getClass();
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+            fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
         }
@@ -13256,7 +13256,7 @@ public class DaemonLoader1Test {
         // The following exception was thrown during execution in test generation
         try {
             java.lang.Class<?> wildcardClass4 = strArray3.getClass();
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+            fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
         }
@@ -13289,7 +13289,7 @@ public class DaemonLoader1Test {
         // The following exception was thrown during execution in test generation
         try {
             java.lang.Class<?> wildcardClass2 = daemonController1.getClass();
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+            fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
         }
@@ -14673,7 +14673,7 @@ public class DaemonLoader1Test {
         // The following exception was thrown during execution in test generation
         try {
             java.lang.Class<?> wildcardClass25 = daemonController24.getClass();
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+            fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
         }
@@ -14862,7 +14862,7 @@ public class DaemonLoader1Test {
         // The following exception was thrown during execution in test generation
         try {
             java.lang.Class<?> wildcardClass42 = daemonController41.getClass();
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+            fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
         }
@@ -17108,7 +17108,7 @@ public class DaemonLoader1Test {
         // The following exception was thrown during execution in test generation
         try {
             java.lang.Class<?> wildcardClass34 = daemonController33.getClass();
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+            fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
         }
@@ -17313,7 +17313,7 @@ public class DaemonLoader1Test {
         // The following exception was thrown during execution in test generation
         try {
             java.lang.Class<?> wildcardClass40 = daemonController39.getClass();
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+            fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
         }
@@ -20304,7 +20304,7 @@ public class DaemonLoader1Test {
         // The following exception was thrown during execution in test generation
         try {
             java.lang.Class<?> wildcardClass71 = daemonController70.getClass();
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+            fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
         }
