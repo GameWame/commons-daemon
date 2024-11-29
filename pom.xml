@@ -262,6 +262,19 @@
         </configuration>
       </plugin>
 
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.0.0</version>
+        <configuration>
+          <!-- Redirige l'output dei test su file -->
+          <redirectTestOutputToFile>true</redirectTestOutputToFile>
+          <!-- Imposta il livello minimo di log -->
+          <testFailureIgnore>false</testFailureIgnore>
+        </configuration>
+      </plugin>
+
+
       <!-- Force detach-distributions to execute *after* Nexus deploy -->
       <!-- we want these distributions deployed to both Nexus and dist.a.o -->
       <plugin>
