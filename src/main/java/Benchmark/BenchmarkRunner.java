@@ -33,14 +33,30 @@ public class BenchmarkRunner {
     private DaemonPermission permissionWithoutActions;
     private Permission anotherPermission;
 
-    @Setup
+    @Param({"1", "10", "100"})
+    private int numberOfActions;
+    private String actions;
+
+    /*@Setup
     public void setup() {
         permissionWithoutActions = new DaemonPermission("control");
         permissionWithActions = new DaemonPermission("control", "start,stop,reload");
         anotherPermission = new DaemonPermission("control", "start,stop");
+    }*/
+
+    @Setup(Level.Iteration)
+    public void setup() {
+        StringBuilder actionBuilder = new StringBuilder();
+        for (int i = 1; i <= numberOfActions; i++) {
+            if (i > 1) {
+                actionBuilder.append(",");
+            }
+            actionBuilder.append("action").append(i);
+        }
+        actions = actionBuilder.toString();
     }
 
-    @Benchmark
+   /* @Benchmark
     public String benchmarkGetActions() {
         return permissionWithActions.getActions();
     }
@@ -63,7 +79,7 @@ public class BenchmarkRunner {
     @Benchmark
     public String benchmarkToString() {
         return permissionWithActions.toString();
-    }
+    }*/
 
     @Benchmark
     public DaemonPermission benchmarkConstructorWithActions() {

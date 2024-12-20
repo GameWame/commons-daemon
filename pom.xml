@@ -150,7 +150,6 @@
       <groupId>org.openjdk.jmh</groupId>
       <artifactId>jmh-generator-annprocess</artifactId>
       <version>1.37</version>
-      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>net.sf.jopt-simple</groupId>
@@ -243,6 +242,16 @@
                       <mainClass>Benchmark.BenchmarkRunner</mainClass>
                     </transformer>
                   </transformers>
+                  <filters>
+                    <filter>
+                      <artifact>*:*</artifact>
+                      <excludes>
+                        <exclude>META-INF/*.SF</exclude>
+                        <exclude>META-INF/*.DSA</exclude>
+                        <exclude>META-INF/*.RSA</exclude>
+                      </excludes>
+                    </filter>
+                  </filters>
                 </configuration>
               </execution>
             </executions>
