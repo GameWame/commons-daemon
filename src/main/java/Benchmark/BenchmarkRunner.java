@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 package Benchmark;
-import org.apache.commons.daemon.DaemonPermission;
+import org.apache.commons.daemon.support.DaemonLoader;
 import org.openjdk.jmh.annotations.*;
 
 import java.security.Permission;
@@ -29,20 +29,13 @@ public class BenchmarkRunner {
     public static void main(String[] args) throws Exception {
         org.openjdk.jmh.Main.main(args);
     }
-    private DaemonPermission permissionWithActions;
-    private DaemonPermission permissionWithoutActions;
+    private DaemonLoader permissionWithActions;
+    private DaemonLoader permissionWithoutActions;
     private Permission anotherPermission;
 
     @Param({"1", "10", "100"})
     private int numberOfActions;
     private String actions;
-
-    /*@Setup
-    public void setup() {
-        permissionWithoutActions = new DaemonPermission("control");
-        permissionWithActions = new DaemonPermission("control", "start,stop,reload");
-        anotherPermission = new DaemonPermission("control", "start,stop");
-    }*/
 
     @Setup(Level.Iteration)
     public void setup() {
@@ -56,39 +49,14 @@ public class BenchmarkRunner {
         actions = actionBuilder.toString();
     }
 
-   /* @Benchmark
-    public String benchmarkGetActions() {
-        return permissionWithActions.getActions();
+    @Benchmark
+    public DaemonLoader benchmarkConstructorWithActions() {
+        return new DaemonLoader("control", actions);
     }
 
     @Benchmark
-    public int benchmarkHashCode() {
-        return permissionWithActions.hashCode();
-    }
-
-    @Benchmark
-    public boolean benchmarkEquals() {
-        return permissionWithActions.equals(anotherPermission);
-    }
-
-    @Benchmark
-    public boolean benchmarkImplies() {
-        return permissionWithActions.implies(anotherPermission);
-    }
-
-    @Benchmark
-    public String benchmarkToString() {
-        return permissionWithActions.toString();
-    }*/
-
-    @Benchmark
-    public DaemonPermission benchmarkConstructorWithActions() {
-        return new DaemonPermission("control", "start,stop");
-    }
-
-    @Benchmark
-    public DaemonPermission benchmarkConstructorWithoutActions() {
-        return new DaemonPermission("control");
+    public DaemonLoader benchmarkConstructorWithoutActions() {
+        return new DaemonLoader("control");
     }
 
 }
