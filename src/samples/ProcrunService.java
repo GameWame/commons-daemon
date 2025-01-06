@@ -58,9 +58,18 @@ public class ProcrunService implements Runnable {
     }
 
     private static File tmpFile(String fileName) {
-        return new File(System.getProperty("java.io.tmpdir"),
-                fileName != null ? fileName : "ProcrunService.tmp");
+        // Check for path traversal
+        if (fileName != null && fileName.contains("..")) {
+            throw new IllegalArgumentException("Invalid file name: path traversal detected.");
+        }
+
+        // Sanitize file name by removing any invalid characters
+        String sanitizedFileName = fileName != null ? fileName.replaceAll("[/\\:*?\"<>|]", "_") : "ProcrunService.tmp";
+
+        // Return the file in the system's temporary directory
+        return new File(System.getProperty("java.io.tmpdir"), sanitizedFileName);
     }
+
 
     private static void usage(){
         System.err.println("Must supply the argument 'start' or 'stop'");
